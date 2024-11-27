@@ -1,0 +1,102 @@
+/* General reset for box sizing and removing default margins and paddings */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none; /* Disable text selection */
+}
+
+/* Set the base font and page margins */
+body {
+  font-family: "Helvetica Neue", sans-serif; /* Clean and modern font */
+  margin: 25px; /* Space around the calculator */
+}
+
+/* Calculator container styles */
+.calculator {
+  background: black; /* Black background for a sleek look */
+  border-radius: 50px; /* Rounded corners for the calculator */
+  color: white; /* White text for contrast */
+  height: 1218px; /* Height of the calculator */
+  padding: 20px; /* Padding inside the calculator */
+  position: relative; /* To position the bottom bar later */
+  width: 563px; /* Width of the calculator */
+}
+
+/* Top container for the clock and status icons */
+.top-container {
+  display: flex; /* Arrange items horizontally */
+  height: 250px; /* Height of the top section */
+  justify-content: space-between; /* Space between the clock and status */
+  padding: 0 20px; /* Padding on left and right */
+}
+
+/* Display area for the calculator's value */
+.value {
+  font-size: 130px; /* Large font for the numbers */
+  font-weight: 300; /* Light font weight */
+  height: 158px; /* Height of the value display */
+  margin-bottom: 20px; /* Space below the display */
+  margin-right: 20px; /* Space to the right of the display */
+  text-align: right; /* Align numbers to the right */
+}
+
+/* Grid container for calculator buttons */
+.buttons-container {
+  display: grid; /* Grid layout for buttons */
+  grid-gap: 20px; /* Space between buttons */
+  grid-template-columns: repeat(4, 1fr); /* Four columns, equal width */
+  grid-template-rows: repeat(5, 1fr); /* Five rows, equal height */
+}
+
+/* Base styles for all buttons */
+.button {
+  align-items: center; /* Center content vertically */
+  background: #333; /* Dark background for buttons */
+  border-radius: 50%; /* Circular buttons */
+  cursor: pointer; /* Pointer cursor on hover */
+  display: flex; /* Flex layout for centering */
+  font-size: 45px; /* Button text size */
+  height: 110px; /* Height of the buttons */
+  justify-content: center; /* Center content horizontally */
+  transition: filter 0.3s; /* Smooth transition on active state */
+  width: 110px; /* Width of the buttons */
+}
+
+/* Styles for functional buttons like AC, ±, and % */
+.button.function {
+  color: black; /* Black text for contrast */
+  background: #a5a5a5; /* Light gray background */
+}
+
+/* Styles for operator buttons like +, -, ×, ÷, and = */
+.button.operator {
+  background: #f1a33c; /* Orange background for operators */
+}
+
+/* Special style for the 0 button (double width) */
+.button.number-0 {
+  border-radius: 55px; /* Less rounded for a pill shape */
+  grid-column: 1 / span 2; /* Spans two columns */
+  justify-content: flex-start; /* Align text to the left */
+  padding-left: 43px; /* Add space before the text */
+  width: 250px; /* Extended width for the button */
+}
+
+/* Hover and active state for buttons */
+.button:active,
+.button:focus {
+  filter: brightness(120%); /* Brighten the button slightly */
+}
+
+/* Decorative bottom bar for aesthetic purposes */
+.bottom {
+  width: 200px; /* Width of the bottom bar */
+  height: 5px; /* Height of the bottom bar */
+  background: white; /* White color for visibility */
+  border-radius: 4px; /* Rounded edges */
+  position: absolute; /* Positioned relative to the calculator */
+  bottom: 10px; /* Positioned slightly above the bottom */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust to be exactly centered */
+}
